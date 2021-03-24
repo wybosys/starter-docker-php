@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# 清除apt缓存
+apt clean
+rm -rf /var/lib/apt/lists/*
+
+# 清除无用日志
+if [ -f anaconda-post.log ]; then
+   rm /anaconda-post.log
+fi
+   
+# 清除临时文件
+rm -rf /tmp/*
+rm -f /root/*.deb
+
+# 清除py缓存
+#find / -name "*.py[co]" -exec rm '{}' ';'
